@@ -1,0 +1,21 @@
+---
+- name: Установка стандартных пакетова
+  hosts: all
+  roles:
+    - role: default_packages
+  tags:
+    - install_packages
+
+- name: Установка и настройка nginx в качестве отдающего сервера с кастомной страницей
+  hosts: nginx_endpoint
+  roles:
+    - role: nginx_endpoint
+  tags:
+    - nginx_endpoint
+
+- name: Установка и настройка nginx в качестве прокси-сервера с просированием на endpoint
+  hosts: nginx_proxy
+  roles:
+    - role: nginx_proxy
+  tags:
+    - nginx_proxy

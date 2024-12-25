@@ -1,0 +1,19 @@
+---
+linux:
+  children:
+    nginx_endpoint:
+      hosts:
+        vm_1:
+          ansible_host: 158.160.1.63 #Машина 1
+        vm_2:
+          ansible_host: 158.160.23.90 #Машина 2
+    nginx_proxy:
+      hosts:
+        vm_3:
+          ansible_host: 89.169.170.91 #Машина 3
+  vars:
+    ansible_ssh_user: "alex"
+    ansible_ssh_private_key_file: ~/.ssh/yandex_cloud_key
+    connection_protocol: ssh
+    ansible_become: true
+    become_user: "root"
