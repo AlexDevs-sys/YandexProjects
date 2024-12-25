@@ -37,7 +37,7 @@ resource "yandex_compute_instance" "virtual_machine" {
   }
 
     metadata = {
-     ssh-keys = "alex:${file("~/.ssh/yandex_cloud_key.pub")}"
+     ssh-keys = "alex:${file("~/.ssh/VmsKeys/yandex_vm_key.pub")}"
    }
 }
 
